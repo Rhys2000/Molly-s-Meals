@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Foundation
 
-struct Restaurant {
+struct Restaurant: Codable {
     var restaurantName = ""
 }
 
@@ -21,6 +22,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let data = UserDefaults.standard.data(forKey: "restaurantList") {
+            do {
+                let decoder = JSONDecoder()
+                listOfRestaurants = try decoder.decode([Restaurant].self, from: data)
+            } catch {
+                print("Unable to decode Restaurants")
+            }
+        }
+        var temp = ""
+        for restaurant in listOfRestaurants {
+            temp += restaurant.restaurantName + ", "
+        }
+        if(temp == "") {
+            textView.text = "Restaurant Names"
+        } else {
+            textView.text = temp
+        }
     }
 
     @IBAction func setDataButton(_ sender: Any) {
@@ -33,7 +51,13 @@ class ViewController: UIViewController {
         for restaurant in listOfRestaurants {
             textView.text += restaurant.restaurantName + ", "
         }
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(listOfRestaurants)
+            UserDefaults.standard.set(data, forKey: "restaurantList")
+        } catch {
+            print("Unable to encode the array")
+        }
     }
     
 }
-
