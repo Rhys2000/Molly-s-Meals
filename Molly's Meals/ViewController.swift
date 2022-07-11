@@ -9,7 +9,11 @@ import UIKit
 import Foundation
 
 struct Restaurant: Codable {
-    var restaurantName = ""
+    var restaurantName: String = ""
+    var restaurantStreetAddress: String = ""
+    var restaurantCity: String = ""
+    var restaurantState: String = ""
+    var restaurantZipcode: Int = 0
 }
 
 var listOfRestaurants = [Restaurant]()

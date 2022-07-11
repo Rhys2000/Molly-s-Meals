@@ -16,32 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-ZZ-Be9">
-                                <rect key="frame" x="87" y="170" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-ZZ-Be9">
+                                <rect key="frame" x="88" y="294" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="J0v-we-D3B"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYB-bI-kIC">
-                                <rect key="frame" x="140" y="354" width="136" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYB-bI-kIC">
+                                <rect key="frame" x="139" y="798" width="136" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create Restauant"/>
                                 <connections>
                                     <action selector="setDataButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYX-Pb-TRG"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Restaurant Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SO8-Op-mRC">
-                                <rect key="frame" x="77" y="79" width="262" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Restaurant Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SO8-Op-mRC">
+                                <rect key="frame" x="77" y="134" width="262" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SO8-Op-mRC" secondAttribute="trailing" constant="75" id="49L-Wt-2El"/>
+                            <constraint firstItem="jqx-ZZ-Be9" firstAttribute="top" secondItem="SO8-Op-mRC" secondAttribute="bottom" constant="120" id="6g0-o0-h8b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kYB-bI-kIC" secondAttribute="bottom" constant="33" id="CDN-XN-xb5"/>
+                            <constraint firstItem="jqx-ZZ-Be9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="NUh-Bb-FKI"/>
+                            <constraint firstItem="jqx-ZZ-Be9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="294" id="Q1q-KL-RVK"/>
+                            <constraint firstItem="jqx-ZZ-Be9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="1" id="R6Q-LE-pqo"/>
+                            <constraint firstItem="kYB-bI-kIC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XIM-7k-ZpE"/>
+                            <constraint firstItem="SO8-Op-mRC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="Xgi-cG-EYx"/>
+                            <constraint firstItem="kYB-bI-kIC" firstAttribute="centerX" secondItem="jqx-ZZ-Be9" secondAttribute="centerX" constant="-1" id="ukg-VB-a7u"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="restaurantNameTextField" destination="SO8-Op-mRC" id="RQ6-Uv-Fhl"/>
