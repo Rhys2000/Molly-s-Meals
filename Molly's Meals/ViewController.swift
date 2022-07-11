@@ -29,8 +29,9 @@ class ViewController: UIViewController {
         tempRestaurant.restaurantName = name!
         listOfRestaurants.append(tempRestaurant)
         restaurantNameTextField.text = ""
-        for restauant in listOfRestaurants {
-            textView.text += restauant.restaurantName
+        textView.text = ""
+        for restaurant in listOfRestaurants {
+            textView.text += restaurant.restaurantName + ", "
         }
     }
     
